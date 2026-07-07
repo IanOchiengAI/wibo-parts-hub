@@ -80,8 +80,18 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10 pt-6 text-center text-sm text-muted-foreground">
-        Powered by <span className="text-primary font-display font-semibold">WIBO</span> © {new Date().getFullYear()}
+      <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-muted-foreground">
+        <span>© {new Date().getFullYear()} <span className="text-primary font-display font-semibold">WIBO</span>. All rights reserved.</span>
+        <span className="flex items-center gap-1.5 group">
+          <span className="inline-block w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+          <span className="group-hover:text-foreground transition-colors">
+            Designed &amp; built by{" "}
+            <span className="text-primary font-display font-semibold tracking-wide">
+              Kasuku Studios
+            </span>
+          </span>
+          <span className="inline-block w-1 h-1 rounded-full bg-primary/40 group-hover:bg-primary transition-colors" />
+        </span>
       </div>
     </div>
   </footer>
