@@ -78,8 +78,8 @@ const Hero = () => {
         <Tabs defaultValue="vehicle" className="w-full">
           <TabsList className="w-full bg-white/5 border border-white/10">
             <TabsTrigger value="vehicle" className="flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Search by Vehicle</TabsTrigger>
-            <TabsTrigger value="chassis" className="flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Chassis Code</TabsTrigger>
-            <TabsTrigger value="symptom" className="flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">What's Wrong?</TabsTrigger>
+            <TabsTrigger value="chassis" className="chassis-search-tab flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Chassis Code</TabsTrigger>
+            <TabsTrigger value="symptom" className="symptom-search-tab flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">What's Wrong?</TabsTrigger>
             <TabsTrigger value="vin" className="flex-1 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">Search by VIN</TabsTrigger>
           </TabsList>
           <TabsContent value="vehicle" className="mt-4">

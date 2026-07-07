@@ -51,7 +51,7 @@ const Navbar = () => {
 
           <Link
             to="/garage"
-            className="flex items-center gap-1.5 text-sm text-foreground/70 hover:text-primary transition-colors font-display"
+            className="garage-button flex items-center gap-1.5 text-sm text-foreground/70 hover:text-primary transition-colors font-display"
           >
             <Car className="w-4 h-4" />
             {vehicle ? (

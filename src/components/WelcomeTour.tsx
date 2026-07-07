@@ -58,7 +58,8 @@ export const WelcomeTour = () => {
       steps={TOUR_STEPS}
       run={run}
       continuous={true}
-      scrollToFirstStep={true}
+      scrollToFirstStep={false}
+      disableScrolling={true}
       showProgress={true}
       showSkipButton={true}
       callback={handleJoyrideCallback}
