@@ -31,7 +31,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 gap-4">
         <Link to="/" className="flex items-center gap-2 flex-shrink-0">
-          <span className="font-display text-2xl font-bold text-primary">WIBO</span>
+          <span className="tour-logo font-display text-2xl font-bold text-primary">WIBO</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
