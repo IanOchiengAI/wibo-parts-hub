@@ -61,7 +61,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
+    <section className="tour-start relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 px-4 overflow-hidden">
       <ParticleBackground />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto mb-10">
