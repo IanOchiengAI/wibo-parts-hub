@@ -3,7 +3,7 @@ import { Joyride, CallBackProps, STATUS, Step } from "react-joyride";
 
 const TOUR_STEPS: Step[] = [
   {
-    target: "body",
+    target: ".tour-logo",
     content: "Welcome to WIBO! Let's take a quick tour of our new features to help you find the right auto parts faster.",
     placement: "center",
     disableBeacon: true,
@@ -58,7 +58,8 @@ export const WelcomeTour = () => {
       steps={TOUR_STEPS}
       run={run}
       continuous={true}
-      scrollToFirstStep={true}
+      scrollToFirstStep={false}
+      disableScrolling={true}
       showProgress={true}
       showSkipButton={true}
       callback={handleJoyrideCallback}

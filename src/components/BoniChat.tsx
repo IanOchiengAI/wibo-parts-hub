@@ -116,7 +116,7 @@ const BoniChat = () => {
   };
 
   return (
-    <section id="ask-boni-ai" className="py-20 px-4">
+    <section id="ask-boni-ai" className="boni-ai-chat py-20 px-4">
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 mb-4">
