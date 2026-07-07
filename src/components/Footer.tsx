@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, BookOpen } from "lucide-react";
 import { SITE } from "@/config/site";
 
 const scrollTo = (id: string) => {
@@ -12,15 +12,25 @@ const Footer = () => (
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
         <div>
           <span className="font-display text-2xl font-bold text-primary">WIBO</span>
-          <p className="text-sm text-muted-foreground mt-2">Your trusted source for genuine auto parts in Kenya.</p>
-          <a
-            href={`https://wa.me/${SITE.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-sm text-green-400 hover:text-green-300 transition-colors font-display font-semibold"
-          >
-            <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
-          </a>
+          <p className="text-sm text-muted-foreground mt-2">{SITE.tagline}</p>
+          <div className="flex flex-col gap-2 mt-4">
+            <a
+              href={`https://wa.me/${SITE.whatsapp}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-green-400 hover:text-green-300 transition-colors font-display font-semibold"
+            >
+              <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+            </a>
+            <a
+              href={SITE.whatsappCatalogue}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-green-400 hover:text-green-300 transition-colors font-display font-semibold"
+            >
+              <BookOpen className="w-4 h-4" /> Browse Catalogue
+            </a>
+          </div>
         </div>
         <div>
           <h4 className="font-display font-semibold text-foreground mb-3">Quick Links</h4>

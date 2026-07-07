@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Briefcase, CheckCircle2 } from "lucide-react";
+import { SITE } from "@/config/site";
 
 const FLEET_SIZES = ["1–3 vehicles", "4–10 vehicles", "11–30 vehicles", "30+ vehicles"];
 
@@ -47,7 +48,7 @@ const Trade = () => {
         `Fleet: ${form.fleet_size || "N/A"}\n` +
         `Notes: ${form.notes || "None"}`
       );
-      window.open(`https://wa.me/254700000000?text=${waMsg}`, "_blank");
+      window.open(`https://wa.me/${SITE.whatsapp}?text=${waMsg}`, "_blank");
     } finally {
       setLoading(false);
     }
