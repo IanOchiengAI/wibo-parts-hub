@@ -25,6 +25,23 @@ function corsHeaders(origin: string): Record<string, string> {
   return headers;
 }
 
+// Per-IP limit (security sweep 2026-09-26). In-memory, so it resets when the isolate recycles;
+// it still stops simple loops against the AI quota.
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX = 12;
+const hits = new Map<string, { start: number; count: number }>();
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = hits.get(ip);
+  if (!entry || now - entry.start > RATE_WINDOW_MS) {
+    hits.set(ip, { start: now, count: 1 });
+    if (hits.size > 5000) hits.clear();
+    return false;
+  }
+  entry.count += 1;
+  return entry.count > RATE_MAX;
+}
+
 function err(status: number, message: string, origin: string) {
   return new Response(JSON.stringify({ error: message }), {
     status,
@@ -52,6 +69,8 @@ serve(async (req) => {
 
   if (req.method !== "POST") return err(405, "Method not allowed", origin);
   if (origin && !ALLOWED_ORIGINS.has(origin)) return err(403, "Origin not allowed", origin);
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (rateLimited(ip)) return err(429, "Too many requests. Try again in a minute.", origin);
 
   const authHeader = req.headers.get("Authorization");
   if (!authHeader?.startsWith("Bearer ")) {
